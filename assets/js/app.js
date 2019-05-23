@@ -1,15 +1,32 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+const users = ['Nathan', 'Billy', 'Susan', 'Smitty'];
+
 // Class Compontent
 class App extends Component {
 	constructor() {
 		super();
 		this.state = {
 			name: 'Nathaniel',
-			age: 32
+			age: 15
 		};
 	}
+	// Method
+	loopUsers = () => {
+		return users.map((user, index) => {
+			return <div key={index}>{user}</div>;
+		});
+	};
+
+	showNotification = () => {
+		if (this.state.age > 18) {
+			return `You Can Enter The Club`;
+		} else {
+			return `You Can NOT Enter The Club`;
+		}
+	};
+
 	render() {
 		return (
 			<div className="container">
@@ -19,8 +36,9 @@ class App extends Component {
 				</h1> */}
 				{/* <Header1 name={this.state.name} /> */}
 				<Header1>
-					<b>Nathan</b>
+					<b>{this.showNotification()}</b>
 				</Header1>
+				<b>{this.loopUsers()}</b>
 				<Footer
 					name="Billy"
 					age={22}
