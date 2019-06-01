@@ -6,20 +6,67 @@ export default class Counter extends Component {
 	constructor() {
 		super();
 		this.state = {
+			status: 'manual',
 			currentNumber: 0
 		};
 	}
+	componentWillMount() {
+		console.log('component will mount started');
+	}
+
+	componentDidMount() {
+		if (this.props.status == 'manual') {
+			this.setState(
+				{
+					status: this.props.status
+				},
+				() => {
+					this.counterRun();
+				}
+			);
+		}
+	}
 	clickedPlus = () => {
-		this.setState({
-			currentNumber: this.state.currentNumber + 1
-		});
+		this.setState(
+			{
+				currentNumber: this.state.currentNumber + 1
+			},
+			() => {
+				console.log(this.state);
+			}
+		);
 	};
 	clickedMinus = () => {
 		this.setState({
 			currentNumber: this.state.currentNumber - 1
 		});
 	};
+	counterRun = () => {
+		setInterval(() => {
+			this.setState({
+				currentNumber: this.state.currentNumber + 1
+			});
+		}, 2000);
+	};
 	render() {
+    const styleCounterComp = {
+      width: '100%',
+      maxWidth: '400px',
+      margin: '0 auto'
+    };
+
+    const styleNumber = {
+      border: '3px solid black',
+      padding: '20px',
+      fontSize: '2rem',
+      fontWeight: '900',
+      textAlign: 'center'
+    };
+
+    const styleButtons = {
+      display: this.props'none': 'flex'
+    };
+
 		return (
 			<div id="counter-comp" style={styleCounterComp}>
 				<div className="Number" style={styleNumber}>
@@ -50,20 +97,3 @@ export default class Counter extends Component {
 	}
 }
 
-const styleCounterComp = {
-	width: '100%',
-	maxWidth: '400px',
-	margin: '0 auto'
-};
-
-const styleNumber = {
-	border: '3px solid black',
-	padding: '20px',
-	fontSize: '2rem',
-	fontWeight: '900',
-	textAlign: 'center'
-};
-
-const styleButtons = {
-	display: 'flex'
-};

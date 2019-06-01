@@ -11,7 +11,7 @@ class App extends Component {
 	render() {
 		return (
 			<div className={'container'}>
-				<Counter />
+				<Counter status="auto" />
 			</div>
 		);
 	}
