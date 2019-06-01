@@ -15,7 +15,7 @@ export default class Button extends Component {
 	};
 	render() {
 		const styleButton = {
-			color: this.props.fontColor,
+			// color: this.props.fontColor,
 			width: '50%',
 			border: '3px solid black',
 			padding: '20px',

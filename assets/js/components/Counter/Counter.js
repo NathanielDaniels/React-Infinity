@@ -1,6 +1,19 @@
 import React, { Component } from 'react';
 import Button from './Button';
 
+// Learn about Object.assign()
+let user = {
+	name: 'Nate',
+	age: 32,
+	location: 'Chicago'
+};
+
+let userNew = Object.assign({}, user, {
+	name: 'Nathaniel'
+});
+
+// console.log(userNew);
+
 // Class Compontent
 export default class Counter extends Component {
 	constructor() {
@@ -48,6 +61,13 @@ export default class Counter extends Component {
 			});
 		}, 1000);
 	};
+	// colorChange = () => {
+	// 	if (this.currentNumber == 10) {
+	// 		return 'blue';
+	// 		console.log('count hit 20+');
+	// 	}
+	// };
+
 	render() {
 		const styleCounterComp = {
 			width: '100%',
@@ -64,7 +84,13 @@ export default class Counter extends Component {
 		};
 
 		const styleButtons = {
-			display: this.props.status == 'auto' ? 'none' : 'flex'
+			display: this.props.status == 'auto' ? 'none' : 'flex',
+			color:
+				this.state.currentNumber < 0
+					? 'red'
+					: 'blueviolet' && this.state.currentNumber > 0
+					? 'limegreen'
+					: 'blueviolet'
 		};
 
 		return (
@@ -75,7 +101,7 @@ export default class Counter extends Component {
 				<div className="buttons" style={styleButtons}>
 					<Button
 						action="minus"
-						hoverColor="red"
+						hoverColor="maroon"
 						backgroundColor="black"
 						fontColor="white"
 						trigger={this.clickedMinus}
