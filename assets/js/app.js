@@ -13,7 +13,8 @@ class App extends Component {
 		return (
 			<div className={'container'}>
 				<Immutable />
-				{/* <Counter status="manual" /> */}
+				<hr style={{ margin: 60 }} />
+				<Counter status="manual" />
 			</div>
 		);
 	}
