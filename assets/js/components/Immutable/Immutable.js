@@ -9,7 +9,13 @@ export default class Immutable extends Component {
 			user: {
 				name: 'Nate',
 				age: 23,
-				location: 'Chicago'
+				location: 'Chicago',
+				grades: {
+					math: 'B',
+					Science: 'B',
+					English: 'A',
+					Gym: 'F'
+				}
 			}
 		};
 		// console.log(this.state);
@@ -17,10 +23,17 @@ export default class Immutable extends Component {
 
 	clickedBtn = () => {
 		console.log('button clicked');
+
+		//Object Spread (Only Use When Changing One Object)
+		const newGrade = {
+			...this.state.user.grades,
+			math: 'A+'
+		};
 		const newUser = Object.assign({}, this.state.user, {
-			name: 'Bilbo'
+			name: 'Bilbo',
+			grades: newGrade
 		});
-		console.log(this.state);
+		console.log(this.state.user.grades);
 		this.setState(
 			{
 				background: 'green',
@@ -32,6 +45,11 @@ export default class Immutable extends Component {
 		);
 		if (this.state.user.name == 'Nate') {
 			console.log('Hello, Nate');
+		}
+		if (this.state.user.grades.math == 'A') {
+			console.log('you are Math Smart');
+		} else {
+			console.log('Get Better At Math');
 		}
 	};
 
