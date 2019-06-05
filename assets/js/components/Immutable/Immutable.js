@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import update from 'immutability-helper';
 
 //Immutable Arrays
 let names = ['Cindy', 'Billy', 'Lisa', 'John'];
@@ -30,13 +31,16 @@ export default class Immutable extends Component {
 	}
 
 	clickedBtn = () => {
+		const newState = update(this.state, {
+			background: { $set: 'red' }
+		});
 		//Object Spread (Only Use When Changing One Object)
 		const newGrade = {
 			...this.state.user.grades,
 			math: 'A+'
 		};
 		// Merge Two Arrays
-		const addEveryone = {
+		const Everyone = {
 			Everyone: [...this.state.names, ...this.state.teachers]
 		};
 		const newUser = Object.assign({}, this.state.user, {
@@ -59,14 +63,18 @@ export default class Immutable extends Component {
 		// 	both: [...this.state.names, ...this.state.teachers]
 		// };
 
-		console.log(this.state);
+		// // Sort Array
+		// const sortArray = {
+		// 	AlphaUsers: this.state.names.slice().sort()
+		// };
 
 		this.setState(
 			{
 				background: 'green',
 				user: newUser,
 				newNames,
-				both: addEveryone
+				Everyone
+				// sortArray
 			},
 			() => {
 				console.log(this.state);
@@ -80,16 +88,16 @@ export default class Immutable extends Component {
 		// } else {
 		// 	console.log('Get Better At Math');
 		// }
-		console.log(this.state);
-		if (this.state.both[5] == 'Brad') {
-			console.log('its Brad alright');
-		} else {
-			console.log('not brad');
-		}
+		// console.log(this.state);
+		// if (this.state.both[3] == 'Brad') {
+		// 	console.log('its Brad alright');
+		// } else {
+		// 	console.log('not brad');
+		// }
 	};
 
 	changeToActive = () => {
-		if (this.state.background == 'green') {
+		if (this.state.background == 'red') {
 			return 'active';
 		} else {
 			return '';
