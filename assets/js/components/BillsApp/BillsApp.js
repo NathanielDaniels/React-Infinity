@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Header from './Header';
+import AllBills from './AllBills';
 
 // Class Compontent
 export default class BillsApp extends Component {
@@ -16,7 +17,7 @@ export default class BillsApp extends Component {
 		return (
 			<div id="BillsApp">
 				<Header />
-				app goes here
+				<AllBills />
 			</div>
 		);
 	}

@@ -115,29 +115,50 @@ h1 {
   }
 }
 
-#Header {
-  background: black;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  h2 {
-    font-size: 2rem;
-    font-weight: 900;
-    color: white;
-  }
+body {
+  background: #222;
 }
-
 #BillsApp {
   background: rgb(63, 255, 173);
   background: linear-gradient(90deg, rgba(63,255, 173,1) 0%, rgba(66,195,194,1) 100%);
   color: blueviolet;
+  width: 800px;
   height: 100vh;
-  // header {
-  //   display: flex;
-  //   justify-content: center;
-  //   align-items: center;
-    
-  // }
+  margin: auto;
+  Header {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #fff;
+    }
+  }
+  #AllBills {
+    .container {
+      width: 100%;
+      padding: 0 20px;
+      .total-bills {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        padding: 20px 0;
+        .text {
+          font-size: 1.5rem;
+          // font-weight: 600;
+        }
+        .number {
+          font-weight: 300;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
 }
