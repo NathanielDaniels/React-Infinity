@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import update from 'immutability-helper';
 
-//Immutable Arrays
-let names = ['Cindy', 'Billy', 'Lisa', 'John'];
-let newNames = [...names, 'Ramsey'];
-
 // Class Compontent
 export default class Immutable extends Component {
 	constructor() {
@@ -28,36 +24,19 @@ export default class Immutable extends Component {
 	}
 
 	clickedBtn = () => {
-		const changeBgColor = update(this.state.background, {
-			$set: 'green'
-		});
 		console.log(this.state);
 
-		const newGrades = update(this.state.user.grades, {
-			$merge: {
-				art: 'B-',
-				bio: 'D'
-			}
+		const newTeachers = update(this.state.teachers, {
+			$push: ['James']
 		});
+
 		const newState = update(this.state, {
-			background: { $set: changeBgColor },
-			// background: { $set: 'green' },
-			user: {
-				grades: { $set: newGrades }
+			teachers: {
+				$set: newTeachers
 			}
-			// background: { $set: 'red' },
-			// teachers: {
-			// 	$set: ['Billy', 'Jordan']
-			// },
-			// newUsers: { $set: [...this.state.names, 'Brad', 'Sara'] },
-			// user: {
-			// 	grades: {
-			// 		math: {
-			// 			$set: 'A'
-			// 		}
-			// 	}
-			// }
 		});
+
+		console.log(this.state.teachers);
 
 		this.setState(newState, () => {
 			console.log(this.state);
@@ -65,7 +44,7 @@ export default class Immutable extends Component {
 	};
 
 	changeToActive = () => {
-		if (this.state.user.grades.bio == 'D') {
+		if (this.state.teachers[3] == 'James') {
 			return 'active';
 		} else {
 			return '';
