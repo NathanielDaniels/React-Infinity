@@ -30,6 +30,18 @@ export default class AllBills extends Component {
 							</div>
 							<div className="price">-$12.99</div>
 						</li>
+						<li className="bill">
+							<div className="company">
+								<div className="logo">
+									<img
+										className="spotifyHulu"
+										src="https://slickdeals.net/blog/wp-content/uploads/2019/03/hulu-spotify.png"
+									/>
+								</div>
+								<div className="title">Spotify/hulu</div>
+							</div>
+							<div className="price">-$9.99</div>
+						</li>
 					</ul>
 				</div>
 			</div>

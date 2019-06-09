@@ -13,9 +13,16 @@ export default class FloatingMenu extends Component {
 
 	render() {
 		return (
-			<nav id="FloatingMenu">
-				<h1>Spend</h1>
-			</nav>
+			<div className="menuContainer">
+				<nav id="FloatingMenu">
+					<div className="link">
+						<div className="icon">
+							<i class="far fa-credit-card" />
+						</div>
+						<div className="text">Spend</div>
+					</div>
+				</nav>
+			</div>
 		);
 	}
 }
