@@ -23,6 +23,8 @@ body {
     }
   }
   #AllBills {
+    position: relative;
+    z-index: 3;
     .container {
       width: 100%;
       padding: 0 20px;
@@ -48,6 +50,7 @@ body {
         background: #fff;
         border-radius: 10px;
         padding: 20px 0;
+        
         .bill {
           color: black;
           padding: 0 20px;
@@ -88,6 +91,7 @@ body {
 .content-background {
   background: #E8E8E8;
   height: 70vh;
+  width: 100%;
   position: absolute;
   z-index: 2;
   bottom: 0;
@@ -99,13 +103,15 @@ body {
     display: flex;
     justify-content: space-between;
     background: #fff;
-    padding: 20px;.content-background {
-  background: #E8E8E8;
-  height: 70vh;
-  position: absolute;
-  z-index: 2;
-  bottom: 0;
-}
+    padding: 20px;
+    z-index: 3;
+    .content-background {
+      background: #E8E8E8;
+      height: 70vh;
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+    }
     width: 100%;
     position: absolute;
     bottom: 0;

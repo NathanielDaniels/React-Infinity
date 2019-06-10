@@ -14,7 +14,7 @@ export default class Header extends Component {
 	render() {
 		return (
 			<header id="Header">
-				<h2>Bills App</h2>
+				<h2>Bill Pay App</h2>
 			</header>
 		);
 	}
