@@ -1,6 +1,7 @@
 body {
   background: #222;
   width: 100%;
+  // overflow: hidden;
 }
 #BillsApp {
   cursor: default;
@@ -27,7 +28,8 @@ body {
     position: relative;
     z-index: 3;
     height: 85vh;
-    overflow: scroll;
+    overflow-y: scroll;
+    // overflow: hidden;
     padding-bottom: 100px;
     .container {
       width: 100%;
@@ -53,7 +55,10 @@ body {
       .bill-list {
         background: #fff;
         border-radius: 10px;
-        padding: 20px 0;
+        padding-bottom: 20px;
+        // overflow-y: scroll;
+        -webkit-box-shadow: 0 10px 31px -9px rgba(173,173,173,1);
+        box-shadow: 0 10px 31px -9px rgba(173,173,173,1);
         .bill {
           color: black;
           padding: 0 20px;
@@ -94,7 +99,7 @@ body {
 
 .content-background {
   background: #E8E8E8;
-  height: 70vh;
+  height: 75vh;
   width: 100%;
   position: absolute;
   z-index: 2;
@@ -104,19 +109,12 @@ body {
 .menuContainer {
   max-width: 100%;
   #FloatingMenu {
-    box-shadow: 0 -1px 5px rgb(168, 168, 168);
+    box-shadow: 0 -5px 15px -9px rgba(173,173,173,1);
     display: flex;
     justify-content: space-between;
     background: #fff;
     padding: 20px;
     z-index: 3;
-    .content-background {
-      background: #E8E8E8;
-      height: 70vh;
-      position: absolute;
-      z-index: 2;
-      bottom: 0;
-    }
     width: 100%;
     position: absolute;
     bottom: 0;

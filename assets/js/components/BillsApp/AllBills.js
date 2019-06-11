@@ -68,12 +68,24 @@ export default class AllBills extends Component {
 								<div className="logo">
 									<img
 										className="spotifyHulu"
-										src="/img/billsapp/hulu-spotify.png"
+										src="/img/billsapp/laFitness.png"
 									/>
 								</div>
-								<div className="title">Spotify/hulu</div>
+								<div className="title">LA Fitness</div>
 							</div>
-							<div className="price">-$9.99</div>
+							<div className="price">-$54.99</div>
+						</li>
+						<li className="bill">
+							<div className="company">
+								<div className="logo">
+									<img
+										className="spotifyHulu"
+										src="/img/billsapp/laFitness.png"
+									/>
+								</div>
+								<div className="title">LA Fitness</div>
+							</div>
+							<div className="price">-$54.99</div>
 						</li>
 					</ul>
 				</div>
