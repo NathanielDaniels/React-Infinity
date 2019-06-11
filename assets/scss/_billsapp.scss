@@ -22,9 +22,13 @@ body {
       color: #fff;
     }
   }
+
   #AllBills {
     position: relative;
     z-index: 3;
+    height: 85vh;
+    overflow: scroll;
+    padding-bottom: 100px;
     .container {
       width: 100%;
       padding: 0 20px;
@@ -50,12 +54,12 @@ body {
         background: #fff;
         border-radius: 10px;
         padding: 20px 0;
-        
         .bill {
           color: black;
           padding: 0 20px;
           border-bottom: 1px solid #e8e8e8;
           padding: 20px;
+          cursor: pointer;
           &:last-child {
             border: none;
           }
@@ -69,7 +73,7 @@ body {
                 height: 100px;
                 border-radius: 50%;
               }
-            .spotifyHulu {
+            .spotifyHulu, .amazon, .codingPhase {
                 border-radius: 45px;
                 height: 80px;
               }
@@ -100,6 +104,7 @@ body {
 .menuContainer {
   max-width: 100%;
   #FloatingMenu {
+    box-shadow: 0 -1px 5px rgb(168, 168, 168);
     display: flex;
     justify-content: space-between;
     background: #fff;

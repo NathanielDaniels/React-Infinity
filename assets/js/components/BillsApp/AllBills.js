@@ -42,6 +42,39 @@ export default class AllBills extends Component {
 							</div>
 							<div className="price">-$9.99</div>
 						</li>
+						<li className="bill">
+							<div className="company">
+								<div className="logo">
+									<img className="amazon" src="/img/billsapp/amazon.png" />
+								</div>
+								<div className="title">Amazon Prime</div>
+							</div>
+							<div className="price">-$12.99</div>
+						</li>
+						<li className="bill">
+							<div className="company">
+								<div className="logo">
+									<img
+										className="codingPhase"
+										src="/img/billsapp/codingPhase.png"
+									/>
+								</div>
+								<div className="title">CodingPhase</div>
+							</div>
+							<div className="price">-$5.00</div>
+						</li>
+						<li className="bill">
+							<div className="company">
+								<div className="logo">
+									<img
+										className="spotifyHulu"
+										src="/img/billsapp/hulu-spotify.png"
+									/>
+								</div>
+								<div className="title">Spotify/hulu</div>
+							</div>
+							<div className="price">-$9.99</div>
+						</li>
 					</ul>
 				</div>
 			</div>
