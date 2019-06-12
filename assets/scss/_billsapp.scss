@@ -1,16 +1,16 @@
-body {
+#app {
   background: #222;
-  width: 100%;
-  // overflow: hidden;
 }
 #BillsApp {
   cursor: default;
   background: rgb(63, 255, 173);
-  background: linear-gradient(90deg, rgba(63,255, 173,1) 0%, rgba(66,195,194,1) 100%);
+  background: linear-gradient(100deg, #dc4f36 0%,#5b86e5 100%);
   max-width: 500px;
   height: 100vh;
+  width: 100%;
   margin: auto;
   position: relative;
+  overflow: hidden;
   Header {
     height: 80px;
     display: flex;
@@ -27,9 +27,8 @@ body {
   #AllBills {
     position: relative;
     z-index: 3;
-    height: 85vh;
+    height: calc(100vh - 80px);
     overflow-y: scroll;
-    // overflow: hidden;
     padding-bottom: 100px;
     .container {
       width: 100%;
@@ -123,16 +122,17 @@ body {
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      font-size: 5px;
       transition: all .4s ease-in-out;
       cursor: pointer;
       &:hover{
-        background: linear-gradient(90deg, rgba(63,255, 173,1) 0%, rgba(66,195,194,1) 100%);
+        background: linear-gradient(100deg, #dc4f36 0%,#5b86e5 100%);
         // border-radius: 20px;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         .far::before, .fas::before {
-          background: linear-gradient(90deg, rgba(63,255, 173,1) 0%, rgba(66,195,194,1) 100%);
+          background: linear-gradient(100deg, #dc4f36 0%,#5b86e5 100%);
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
@@ -166,7 +166,7 @@ body {
       }
     }
     .add-button {
-      background: linear-gradient(90deg, rgba(63,255, 173,1) 0%, rgba(66,195,194,1) 100%);
+      background: linear-gradient(100deg, #dc4f36 0%,#5b86e5 100%);
       height: 55px;
       width: 55px;
       border-radius: 50%;
@@ -175,6 +175,31 @@ body {
         position: relative;
         top: 50%;
         transform: translate(0,-50%);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 600px){
+  #app {
+    background: #222;
+    height: 100vh;
+    width: 100%;
+  }
+  #BillsApp {
+    width: 414px;
+    height: 100vh;
+    border-radius: 15px;
+  }
+  #FloatingMenu {
+    .link {
+      .icon {
+        i {
+          font-size: 1.8rem;
+        }
+      }
+      .text {
+        font-size: 1.3rem !important;
       }
     }
   }

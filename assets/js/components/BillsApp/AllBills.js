@@ -9,7 +9,7 @@ export default class AllBills extends Component {
 	}
 
 	showAllBills = () => {
-		const bills = [1, 12, 31, 4, 3, 5, 467, 7, 43, 46, 35, 63, 754];
+		const bills = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 
 		return bills.map(bill => {
 			return (
@@ -36,6 +36,7 @@ export default class AllBills extends Component {
 					</div>
 
 					<ul className="bill-list">
+						{this.showAllBills()}
 						{/* <li className="bill">
 							<div className="company">
 								<div className="logo">
