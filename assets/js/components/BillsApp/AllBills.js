@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import BillsApp from './BillsApp';
 
 // Class Compontent
 export default class AllBills extends Component {
@@ -7,9 +8,23 @@ export default class AllBills extends Component {
 		this.state = {};
 	}
 
-	clickedBtn = () => {};
+	showAllBills = () => {
+		const bills = [1, 12, 31, 4, 3, 5, 467, 7, 43, 46, 35, 63, 754];
 
-	changeToActive = () => {};
+		return bills.map(bill => {
+			return (
+				<li className="bill" key={bill}>
+					<div className="company">
+						<div className="logo">
+							<img src="/img/billsapp/netflix.png" />
+						</div>
+						<div className="title">Netflix</div>
+					</div>
+					<div className="price">-$12.99</div>
+				</li>
+			);
+		});
+	};
 
 	render() {
 		return (
@@ -21,7 +36,7 @@ export default class AllBills extends Component {
 					</div>
 
 					<ul className="bill-list">
-						<li className="bill">
+						{/* <li className="bill">
 							<div className="company">
 								<div className="logo">
 									<img src="/img/billsapp/netflix.png" />
@@ -29,8 +44,8 @@ export default class AllBills extends Component {
 								<div className="title">Netflix</div>
 							</div>
 							<div className="price">-$12.99</div>
-						</li>
-						<li className="bill">
+						</li> */}
+						{/* <li className="bill">
 							<div className="company">
 								<div className="logo">
 									<img
@@ -86,7 +101,7 @@ export default class AllBills extends Component {
 								<div className="title">LA Fitness</div>
 							</div>
 							<div className="price">-$54.99</div>
-						</li>
+						</li> */}
 					</ul>
 				</div>
 			</div>
