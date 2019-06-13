@@ -8,7 +8,9 @@ import AddBill from './AddBill';
 export default class BillsApp extends Component {
 	constructor() {
 		super();
-		this.state = {};
+		this.state = {
+			addBillOpen: false
+		};
 	}
 
 	clickedBtn = () => {};
@@ -20,7 +22,7 @@ export default class BillsApp extends Component {
 			<div id="BillsApp">
 				<Header />
 				<AllBills />
-				<AddBill />
+				<AddBill addBillOpen={this.state.addBillOpen} />
 				<div className="content-background" />
 				<FloatingMenu />
 			</div>
