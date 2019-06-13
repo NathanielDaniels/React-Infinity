@@ -11,7 +11,7 @@ export default class AllBills extends Component {
 
 	render() {
 		return (
-			<div id="AddBill">
+			<div id="AddBill" className="active">
 				<div className="container">
 					<h2>Add Bill</h2>
 					<form>
@@ -26,9 +26,13 @@ export default class AllBills extends Component {
 								type="number"
 								id="amount_due"
 								name="amount_due"
+								step=".01"
 								placeholder="$"
+								min="0"
 							/>
 						</div>
+
+						<button type="submit">Save</button>
 					</form>
 				</div>
 			</div>
