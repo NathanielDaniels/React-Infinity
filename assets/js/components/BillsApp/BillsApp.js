@@ -9,11 +9,14 @@ export default class BillsApp extends Component {
 	constructor() {
 		super();
 		this.state = {
-			addBillOpen: false
+			addBillOpen: false,
+			allBills: []
 		};
 	}
 
-	clickedBtn = () => {};
+	clickedAddBillBtn = () => {
+		this.setState({ addBillOpen: !this.state.addBillOpen });
+	};
 
 	changeToActive = () => {};
 
@@ -24,7 +27,7 @@ export default class BillsApp extends Component {
 				<AllBills />
 				<AddBill addBillOpen={this.state.addBillOpen} />
 				<div className="content-background" />
-				<FloatingMenu />
+				<FloatingMenu clickedAddBillBtn={this.clickedAddBillBtn} />
 			</div>
 		);
 	}
