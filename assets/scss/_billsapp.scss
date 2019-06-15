@@ -127,7 +127,6 @@
       cursor: pointer;
       &:hover{
         background: linear-gradient(40deg, #dc4f36 0%,#5b86e5 100%);
-        // border-radius: 20px;
         background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -190,7 +189,7 @@
   padding: 20px;
   transform: translate3d(100%,100%,0);
   transition: transform .4s ease-in-out;
-  border-radius: 15px;
+  // border-radius: 15px;
   &.active {
     transform: translate3d(0,0,0);
   }
