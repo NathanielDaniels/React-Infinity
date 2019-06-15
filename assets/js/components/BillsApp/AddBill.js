@@ -26,6 +26,10 @@ export default class AllBills extends Component {
 
 	handleSubmit = () => {
 		event.preventDefault();
+		this.setState({
+			business_name: '',
+			amount_due: 0
+		});
 		this.props.saveBill(this.state);
 		console.log(this.state);
 	};

@@ -11,9 +11,9 @@ export default class AllBills extends Component {
 	showAllBills = () => {
 		const bills = this.props.allBills;
 		if (bills.length > 0) {
-			return bills.map(bill => {
+			return bills.map((bill, index) => {
 				return (
-					<li className="bill" key={bill}>
+					<li className="bill" key={index}>
 						<div className="company">
 							<div className="logo">
 								<img src="/img/billsapp/payBill.png" />
@@ -41,6 +41,8 @@ export default class AllBills extends Component {
 		for (var i = 0; i < bills.length; i++) {
 			total += parseInt(bills[i].amount_due);
 		}
+
+		console.log(total);
 		if (bills.length > 0) {
 			return total;
 		} else {
