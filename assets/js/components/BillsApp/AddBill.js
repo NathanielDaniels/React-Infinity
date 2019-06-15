@@ -64,6 +64,17 @@ export default class AllBills extends Component {
 							/>
 						</div>
 
+						<div className="form-group">
+							<label htmlFor="add_img">Add Image</label>
+							<input
+								type="file"
+								id="add_img"
+								name="add_img"
+								onChange={this.inputChange}
+								value={this.state.add_img}
+							/>
+						</div>
+
 						<button type="submit">Save</button>
 					</form>
 				</div>
