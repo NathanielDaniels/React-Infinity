@@ -22,6 +22,10 @@ export default class AllBills extends Component {
 							<div className="title">{bill.business_name}</div>
 						</div>
 						<div className="price">-${bill.amount_due}</div>
+						<div className="buttons">
+							<div className="paid">check</div>
+							<div className="paid">delete</div>
+						</div>
 					</li>
 				);
 			});
