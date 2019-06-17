@@ -28,8 +28,9 @@
     position: relative;
     z-index: 3;
     height: calc(100vh - 80px);
-    overflow-y: scroll;
+    overflow-y: auto;
     padding-bottom: 100px;
+    overflow: hidden;
     .container {
       width: 100%;
       padding: 0 20px;
@@ -40,15 +41,49 @@
         align-items: center;
         color: #fff;
         padding: 20px 0;
+        position: relative;
+        overflow: hidden;
         .text {
           font-size: 1.5rem;
         }
-        .number, .price {
+        .number{
           font-size: 1.2rem;
           font-weight: 300;
           display: flex;
           justify-content: center;
           align-items: center;
+        }
+        .price {
+          font-size: 2rem;
+          font-weight: 300;
+          color: #bd442e;
+        }
+        .buttons {
+          height: 100%;
+          display: flex;
+          position: absolute;
+          top: 0;
+          right: 0;
+          transform: translate3d(120px,0,0);
+          transition: transform .4s ease-in-out;
+          .paid, .delete {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #5b86e5;
+            padding: 0 20px;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: rgb(32, 31, 31);
+            border-left: 1px solid black;
+          }
+          .delete {
+            background: #dc4f36;
+            position: relative;
+            bottom: 0;
+            
+          }
         }
       }
       .bill-list {
@@ -57,12 +92,20 @@
         margin-bottom: 20px;
         -webkit-box-shadow: 0 10px 31px -9px rgba(173,173,173,1);
         box-shadow: 0 10px 31px -9px rgba(173,173,173,1);
+        overflow: hidden;
         .bill {
           color: black;
           padding: 0 20px;
           border-bottom: 1px solid #e8e8e8;
           padding: 20px;
-          // cursor: url(myBall.cur),auto;
+          &:hover {
+            .price {
+               transform: translate3d(0,0,0);
+            }
+            .buttons {
+              transform: translate3d(0,0,0);
+            }
+          }
           &:last-child {
             border: none;
           }
@@ -86,8 +129,8 @@
               }
             }
             .title {
-              font-size: 1.1rem;
-              font-weight: 500;
+              font-size: 1.6rem;
+              font-weight: 400;
               margin-left: 20px;
               color: rgb(63,60,60);
               text-transform: capitalize;
@@ -193,7 +236,6 @@
   padding: 20px;
   transform: translate3d(100%,100%,0);
   transition: transform .4s ease-in-out;
-  // border-radius: 15px;
   &.active {
     transform: translate3d(0,0,0);
   }

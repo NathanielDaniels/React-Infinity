@@ -23,8 +23,12 @@ export default class AllBills extends Component {
 						</div>
 						<div className="price">-${bill.amount_due}</div>
 						<div className="buttons">
-							<div className="paid">check</div>
-							<div className="paid">delete</div>
+							<div className="paid" onClick={this.props.changeBillStatus}>
+								<i className="fas fa-check-double" />
+							</div>
+							<div className="delete">
+								<i className="fas fa-trash-alt" />
+							</div>
 						</div>
 					</li>
 				);
@@ -60,7 +64,7 @@ export default class AllBills extends Component {
 				<div className="container">
 					<div className="total-bills">
 						<div className="text">Total Amount:</div>
-						<div className="number">${this.billsTotalAmount()}</div>
+						<div className="number">-${this.billsTotalAmount()}</div>
 					</div>
 
 					<ul className="bill-list">

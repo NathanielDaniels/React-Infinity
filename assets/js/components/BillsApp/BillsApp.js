@@ -11,7 +11,13 @@ export default class BillsApp extends Component {
 		super();
 		this.state = {
 			addBillOpen: false,
-			allBills: []
+			allBills: [
+				{
+					business_name: 'Netflix',
+					amount_due: 13,
+					status: 'unpaid'
+				}
+			]
 		};
 	}
 
@@ -35,11 +41,18 @@ export default class BillsApp extends Component {
 		);
 	};
 
+	changeBillStatus = billIndex => {
+		console.log(billIndex);
+	};
+
 	render() {
 		return (
 			<div id="BillsApp">
 				<Header />
-				<AllBills allBills={this.state.allBills} />
+				<AllBills
+					allBills={this.state.allBills}
+					changeBillStatus={this.changeBillStatus}
+				/>
 				<AddBill
 					addBillOpen={this.state.addBillOpen}
 					saveBill={this.saveBill}
