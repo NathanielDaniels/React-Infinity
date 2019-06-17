@@ -42,6 +42,29 @@ export default class BillsApp extends Component {
 	};
 
 	changeBillStatus = billIndex => {
+		const allbills = this.state.allBills;
+		const bill = allbills[billIndex];
+		bill.status == 'unpaid' ? (bill.status = 'paid') : (bill.status = 'unpaid');
+
+		const newState = update(this.state, {
+			allBills: {
+				$set: allbills
+			}
+		});
+		this.setState(newState, () => {
+			console.log(this.state);
+		});
+	};
+
+	deleteBill = billIndex => {
+		const allBills = this.state.allBills;
+		allBills.splice(billIndex, 1);
+		const newState = update(this.state, {
+			allBills: {
+				$set: allBills
+			}
+		});
+		this.setState(newState);
 		console.log(billIndex);
 	};
 
@@ -52,6 +75,7 @@ export default class BillsApp extends Component {
 				<AllBills
 					allBills={this.state.allBills}
 					changeBillStatus={this.changeBillStatus}
+					deleteBill={this.deleteBill}
 				/>
 				<AddBill
 					addBillOpen={this.state.addBillOpen}
