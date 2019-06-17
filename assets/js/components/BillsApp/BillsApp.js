@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import update from 'immutability-helper';
+
 import Header from './Header';
 import AllBills from './AllBills';
 import FloatingMenu from './FloatingMenu';
 import AddBill from './AddBill';
-import update from 'immutability-helper';
 
 // Class Compontent
 export default class BillsApp extends Component {
@@ -12,11 +13,11 @@ export default class BillsApp extends Component {
 		this.state = {
 			addBillOpen: false,
 			allBills: [
-				{
-					business_name: 'Netflix',
-					amount_due: 13,
-					status: 'unpaid'
-				}
+				// {
+				// 	business_name: 'Netflix',
+				// 	amount_due: 13,
+				// 	status: 'unpaid'
+				// }
 			]
 		};
 	}

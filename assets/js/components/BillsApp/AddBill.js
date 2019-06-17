@@ -8,7 +8,8 @@ export default class AllBills extends Component {
 		super();
 		this.state = {
 			business_name: '',
-			amount_due: 0
+			amount_due: '',
+			status: 'unpaid'
 		};
 	}
 
